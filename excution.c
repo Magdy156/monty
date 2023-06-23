@@ -14,6 +14,7 @@ int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 				{"pall", f_pall},
 				{"nop", f_nop},
 				{"pop", f_pop},
+				{"pint", f_pint},
 				{NULL, NULL}
 				};
 	char *op;
