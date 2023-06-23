@@ -1,5 +1,6 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -19,9 +20,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+		int n;
+		struct stack_s *prev;
+		struct stack_s *next;
 } stack_t;
 
 /**
@@ -34,8 +35,27 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+		char *opcode;
+		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct data_s - variables ,args, file, line content
+ * @arg: value
+ * @file: pointer to monty file
+ * @buff: line content
+ * Description: responsinle for the program arguments
+ */
+typedef struct data_s
+{
+	char *arg;
+	FILE *file;
+	char *buff;
+}  data_t;
+extern data_t data;
+void push(stack_t **top, int n);
+void f_push(stack_t **head, unsigned int counter);
+void f_pall(stack_t **top, unsigned int counter);
+void free_stack(stack_t *head);
+int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file);
 #endif
