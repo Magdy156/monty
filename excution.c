@@ -12,6 +12,7 @@ int execute(char *buffer, stack_t **stack, unsigned int counter, FILE *file)
 	instruction_t opst[] = {
 				{"push", f_push},
 				{"pall", f_pall},
+				{"nop", f_nop},
 				{NULL, NULL}
 				};
 	char *op;
