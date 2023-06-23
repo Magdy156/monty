@@ -62,4 +62,5 @@ void f_nop(stack_t **top, unsigned int counter);
 void f_pop(stack_t **top, unsigned int counter);
 void f_pint(stack_t **top, unsigned int counter);
 void f_swap(stack_t **top, unsigned int counter);
+void f_add(stack_t **top, unsigned int counter);
 #endif
